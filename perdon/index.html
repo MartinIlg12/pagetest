@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdóname, mi amor</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: #d63384;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #ff99cc;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            padding: 10px 15px;
+            display: inline-block;
+            font-weight: bold;
+            border-radius: 5px;
+            background-color: #ff66b2;
+        }
+        nav a:hover {
+            background-color: #ff3385;
+        }
+        .carousel {
+            width: 90%;
+            max-width: 400px;
+            margin: 20px auto;
+            position: relative;
+            border-radius: 15px;
+            border: 5px solid #ff66b2;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #fff0f5;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: none;
+            border-radius: 15px;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .carousel button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 102, 178, 0.8);
+            border: none;
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        h1 {
+            font-size: 2em;
+            color: #c2185b;
+        }
+        p {
+            font-size: 1em;
+            color: #6a1b9a;
+            padding: 10px;
+        }
+        .container {
+            background-color: #ffebee;
+            padding: 15px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .music-section {
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #ffcce6;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .music-section p {
+            font-size: 1em;
+            font-weight: bold;
+            color: #c2185b;
+        }
+        .music-section a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #ff66b2;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .music-section a:hover {
+            background-color: #ff3385;
+        }
+        @media (max-width: 375px) { /* iPhone 7 */
+            h1 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            nav a {
+                padding: 8px 12px;
+                font-size: 0.9em;
+            }
+            .carousel {
+                max-width: 320px;
+            }
+        }
+    </style>
+    <script>
+        let currentImage = 0;
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('.carousel img');
+            images[currentImage].classList.add('active');
+        });
+        function showImage(index) {
+            const images = document.querySelectorAll('.carousel img');
+            images[currentImage].classList.remove('active');
+            currentImage = (index + images.length) % images.length;
+            images[currentImage].classList.add('active');
+        }
+        function nextImage() {
+            showImage(currentImage + 1);
+        }
+        function prevImage() {
+            showImage(currentImage - 1);
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="about.html">Disculpas</a>
+        <a href="contact.html">Calendario</a>
+    </nav>
+    <div class="music-section">
+        <p>Pon esta canción antes de ver la página</p>
+        <a href="https://www.youtube.com/watch?v=6AuBZ54RCn4" target="_blank">"CLID" aqui</a>
+    </div>
+    <div class="container">
+        <h1>Lo siento 😕</h1>
+        <p>No hay palabras suficientes para expresar cuánto me duele perderte. Espero que puedas perdonarme.</p>
+    </div>
+    <div class="music-section">
+        <h1>Recuerdos Bonitos</h1>
+        <p>Aunque no esten todos, quiero dejar estos poquitos aqui para que nunca los olvides</p>
+    </div>
+    <div class="carousel">
+        <button class="prev" onclick="prevImage()">&#10094;</button>
+        <img src="imagen1.jpg" alt="Recuerdo hermoso 1">
+        <img src="imagen2.jpg" alt="Recuerdo hermoso 2">
+        <img src="imagen3.jpg" alt="Recuerdo hermoso 3">
+        <img src="imagen4.jpg" alt="Recuerdo hermoso 3">
+        <img src="imagen5.jpg" alt="Recuerdo hermoso 3">
+        <img src="imagen6.jpg" alt="Recuerdo hermoso 3">
+        <button class="next" onclick="nextImage()">&#10095;</button>
+    </div>
+</body>
+</html>

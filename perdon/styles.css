@@ -1,0 +1,181 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #ff69b4; /* Color rosado */
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar styles */
+nav {
+    background-color: #ff69b4; /* Color rosado */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffb6c1; /* Rosa claro */
+}
+
+/* Calendar styles */
+#calendar {
+    width: 100%;
+    max-width: 450px;
+    margin: 40px auto;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Month and year header */
+#month-year {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ff69b4; /* Color rosado */
+}
+
+/* Days grid */
+#days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    justify-items: center;
+    font-size: 18px;
+}
+
+/* Day cell styles */
+.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.day:hover {
+    background-color: #ff69b4; /* Color rosado */
+    color: white;
+}
+
+.today {
+    background-color: #ff69b4; /* Círculo rosado */
+    color: white;
+    font-weight: bold;
+}
+
+/* Estilo para los días pasados con caras tristes */
+.past-day {
+    background-color: #dcdcdc; /* Gris claro */
+    color: #666;
+    font-weight: normal;
+}
+
+.past-day:after {
+    content: '😞'; /* Carita triste */
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+/* Styles for the empty days at the beginning of the month */
+.empty {
+    background-color: transparent;
+}
+
+/* Responsiveness for iPhone 7 */
+@media (max-width: 375px) { /* Estilo para dispositivos con un ancho de pantalla de hasta 375px (iPhone 7) */
+    h1 {
+        font-size: 28px; /* Tamaño de fuente más pequeño para el título */
+        margin-top: 20px;
+    }
+
+    nav {
+        padding: 10px 0;
+    }
+
+    nav a {
+        font-size: 16px;
+        margin: 0 12px;
+    }
+
+    #calendar {
+        width: 90%; /* Reduce el tamaño del calendario en pantallas pequeñas */
+        padding: 15px;
+    }
+
+    #month-year {
+        font-size: 24px;
+    }
+
+    #days {
+        grid-template-columns: repeat(7, 1fr);
+        font-size: 16px;
+    }
+
+    .day {
+        width: 35px; /* Reducir el tamaño de las celdas de los días */
+        height: 35px;
+    }
+}
+
+@media (max-width: 320px) { /* Ajustes aún más pequeños para dispositivos más pequeños como el iPhone SE */
+    h1 {
+        font-size: 24px; /* Tamaño de fuente aún más pequeño para el título */
+        margin-top: 15px;
+    }
+
+    nav {
+        padding: 8px 0;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 0 8px;
+    }
+
+    #calendar {
+        width: 90%;
+        padding: 12px;
+    }
+
+    #month-year {
+        font-size: 20px;
+    }
+
+    #days {
+        grid-template-columns: repeat(7, 1fr);
+        font-size: 14px;
+    }
+
+    .day {
+        width: 30px; /* Aumentar aún más la reducción de las celdas */
+        height: 30px;
+    }
+}
